@@ -1,0 +1,74 @@
+
+<div class="card p-5 mt-3" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter contact</h4>
+
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form" (ngSubmit)="submit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>name</mat-label>
+                                        <input type="text" name="name" matInput class="form-control" formControlName="name" >
+                                    </mat-form-field>
+                                   
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  
+                                    <mat-form-field class="example-full-width" >
+                                        <mat-label>username</mat-label>
+                                        <input type="text" name="username" class="form-control" matInput formControlName="username">
+                                    </mat-form-field>
+                                    
+                                </div>
+
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>email</mat-label>
+                                        <input type="text" name="email" class="form-control" matInput formControlName="email" >
+                                    </mat-form-field>
+                                   
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                    <mat-form-field class="example-full-width" >
+                                        <mat-label>password</mat-label>
+                                        <input type="text" name="password" class="form-control" matInput formControlName="password" >
+                                    </mat-form-field>
+                                   
+                                </div>
+
+                            </div>
+                            <input [disabled]="!form.valid" class="btn btn-primary" type="submit" value="Submit">
+                            <!-- <button mat-raised-button type="submit" class="btn btn-danger pull-right">
+								Save
+							</button>
+                            <button mat-raised-button  class="btn btn-secondary pull-right" routerLink="/Agency-list">
+								Annuler
+							</button> -->
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+

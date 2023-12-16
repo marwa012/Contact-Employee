@@ -1,0 +1,40 @@
+<div class="container">
+    <div align="right">
+        <button mat-raised-button color="accent" routerLink="/contact/contact-list">Go To Employee List</button>
+    </div>
+    <div class="card p-5 mt-3" >
+        
+        <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+        <mat-form-field appearance="outline">
+            <mat-label>name</mat-label>
+            <input matInput placeholder="name" name="name" [(ngModel)]="employee.name" required>
+            <mat-icon matSuffix>person_pin</mat-icon>
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>username</mat-label>
+            <input matInput placeholder="username" name="username" [(ngModel)]="employee.username" required>
+            <mat-icon matSuffix>person</mat-icon>
+           
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>email</mat-label>
+            <input matInput type="email" placeholder="email" name="email" [(ngModel)]="employee.email" class="form-control" #email="ngModel" required email>
+            <mat-icon matSuffix>email</mat-icon>
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid" >Email is Required</div>
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input matInput type="password" placeholder="password" name="password" [(ngModel)]="employee.password" required>
+            <mat-icon matSuffix>lock_outline</mat-icon>
+           
+          </mat-form-field>
+          <div class="text-center">
+            <button mat-raised-button class="m-2">Clear</button>
+          <button  [disabled]="!employeeForm.valid" mat-raised-button color="primary" class="m-2" >Save</button>
+          </div>
+          </form>
+
+    </div>
+</div>
